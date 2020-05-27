@@ -20,6 +20,13 @@ public class IndexController {
         meetings.forEach(System.out::println);
     }
 
+    @RequestMapping("/list")
+    public void list()
+    {
+        List<Meeting> meetings = meetingService.getAllMeetings();
+        meetings.forEach(System.out::println);
+    }
+
     @PostMapping("/saveMeeting")
     public void saveMeeting(@RequestBody Meeting meeting)
     {
